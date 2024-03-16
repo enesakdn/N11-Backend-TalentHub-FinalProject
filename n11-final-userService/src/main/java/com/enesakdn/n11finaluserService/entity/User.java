@@ -1,4 +1,5 @@
 package com.enesakdn.n11finaluserService.entity;
+import com.enesakdn.n11finaluserService.general.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
@@ -17,41 +18,34 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "aaa")
+public class User extends BaseEntity {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "User")
-    @SequenceGenerator(name = "User", sequenceName = "USER_ID_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "aaa")
+    @SequenceGenerator(name = "aaa", sequenceName = "aaa_ID_SEQ")
     @Id
     private Long id;
 
-    @NotNull
-    @Length(min = 1, max = 100)
+
     @Column(name = "NAME", length = 100, nullable = false)
     private String name;
 
-    @NotNull
-    @Length(min = 1, max = 100)
+
     @Column(name = "SURNAME", length = 100, nullable = false)
     private String surname;
 
-    @Past
+
     @Column(name = "BIRTH_DATE")
     private LocalDate birthDate;
 
-    @NotBlank
+
     @Column(name = "USERNAME", length = 100, nullable = false)
     private String username;
-
-    @NotBlank
-    @Column(name = "PASSWORD", length = 100, nullable = false)
-    private String password;
 
     @Column(name = "PHONE_NUMBER", length = 20)
     private String phoneNumber;
 
-    @Email
-    @NotBlank
+
     @Column(name = "EMAIL", length = 100, nullable = false)
     private String email;
 

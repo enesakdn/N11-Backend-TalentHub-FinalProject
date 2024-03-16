@@ -21,9 +21,9 @@ public class Comment extends BaseEntity {
     @Id
     private Long id;
 
-    private long CustomerId;
+    private long userId;
 
-    private long RestaurantId;
+    private long restaurantId;
 
     @Column(name = "COMMENT-TOPIC", length = 50)
     private String topic;
