@@ -23,7 +23,7 @@ public class Comment extends BaseEntity {
 
     private long userId;
 
-    private long restaurantId;
+    private String restaurantId;
 
     @Column(name = "COMMENT-TOPIC", length = 50)
     private String topic;
@@ -34,5 +34,9 @@ public class Comment extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "SCORE")
     private EnumScore score;
+
+    public String getRestaurantId() {
+        return restaurantId;
+    }
 
 }

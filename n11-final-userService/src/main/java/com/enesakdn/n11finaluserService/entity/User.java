@@ -49,4 +49,10 @@ public class User extends BaseEntity {
     @Column(name = "EMAIL", length = 100, nullable = false)
     private String email;
 
+    @Column(name = "LONGITUDE")
+    private Double longitude;
+
+    @Column(name = "LATITUDE")
+    private Double latitude;
+
 }

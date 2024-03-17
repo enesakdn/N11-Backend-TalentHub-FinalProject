@@ -33,7 +33,7 @@ public class CommentControllerContractImpl implements CommentControllerContract 
 
     @Override
     public CommentDTO updateComment(CommentUpdateRequest request) {
-        Comment comment = commentEntityService.findByIdWithControl(request.id());
+        Comment comment = commentEntityService.findByIdWithControl(request.getId());
         CommentMapper.INSTANCE.updateCommentFields(comment, request);
         commentEntityService.save(comment);
         return CommentMapper.INSTANCE.convertToCommentDTO(comment);
@@ -54,6 +54,15 @@ public class CommentControllerContractImpl implements CommentControllerContract 
     public List<CommentDTO> getCommentByUserId(long userId) {
         List<Comment> comments = commentEntityService.findCommentByUserId(userId);
         return CommentMapper.INSTANCE.convertToCommentDTOs(comments);
+    }
+    @Override
+    public List<CommentDTO> getCommentsByRestaurantId(String restaurantId) {
+        List<Comment> comments = commentEntityService.findCommentsByRestaurantId(restaurantId);
+        return CommentMapper.INSTANCE.convertToCommentDTOs(comments);
+    }
+    @Override
+    public double calculateAverageScoreByRestaurantId(String restaurantId) {
+        return commentEntityService.calculateAverageScoreByRestaurantId(restaurantId);
     }
 }
 

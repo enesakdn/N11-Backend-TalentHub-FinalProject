@@ -41,7 +41,7 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO updateUser(UserUpdateRequest request) {
 
-        User user = userEntityService.findByIdWithControl(request.id());
+        User user = userEntityService.findByIdWithControl(request.getId());
 
         UserMapper.INSTANCE.updateUserFields(user, request);
 

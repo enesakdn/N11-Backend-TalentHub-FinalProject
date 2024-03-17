@@ -52,4 +52,14 @@ public class CommentController {
         List<CommentDTO> commentDTOS = commentControllerContract.getCommentByUserId(userId);
         return ResponseEntity.ok(RestResponse.of(commentDTOS));
     }
+    @GetMapping("/restaurant/{restaurantId}")
+    public ResponseEntity<RestResponse<List<CommentDTO>>> getCommentsByRestaurantId(@PathVariable String restaurantId) {
+        List<CommentDTO> commentsByRestaurant = commentControllerContract.getCommentsByRestaurantId(restaurantId);
+        return ResponseEntity.ok(RestResponse.of(commentsByRestaurant));
+    }
+    @GetMapping("/{restaurantId}/average-score")
+    public ResponseEntity<RestResponse<Double>> getAverageScoreByRestaurantId(@PathVariable String restaurantId) {
+        double averageScore = commentControllerContract.calculateAverageScoreByRestaurantId(restaurantId);
+        return ResponseEntity.ok(RestResponse.of(averageScore));
+    }
 }

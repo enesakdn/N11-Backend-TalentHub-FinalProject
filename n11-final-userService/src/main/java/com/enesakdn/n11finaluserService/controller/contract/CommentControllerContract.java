@@ -18,4 +18,6 @@ public interface CommentControllerContract {
     void deleteComment(Long id);
 
     List<CommentDTO> getCommentByUserId(long userId);
+    List<CommentDTO> getCommentsByRestaurantId(String restaurantId);
+    double calculateAverageScoreByRestaurantId(String restaurantId);
 }
