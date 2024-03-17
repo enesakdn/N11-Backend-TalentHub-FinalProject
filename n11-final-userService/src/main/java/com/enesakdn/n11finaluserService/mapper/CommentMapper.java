@@ -26,7 +26,5 @@ public interface CommentMapper {
     List<CommentDTO> convertToCommentDTOs(List<Comment> comment);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "userId", ignore = true)
-    @Mapping(target = "restaurantId", ignore = true)
     void updateCommentFields(@MappingTarget Comment comment, CommentUpdateRequest request);
 }

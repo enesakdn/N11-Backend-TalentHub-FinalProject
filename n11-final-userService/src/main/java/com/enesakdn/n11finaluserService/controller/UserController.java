@@ -1,6 +1,6 @@
 package com.enesakdn.n11finaluserService.controller;
 
-import com.enesakdn.n11finaluserService.controller.contrat.UserControllerContract;
+import com.enesakdn.n11finaluserService.controller.contract.UserControllerContract;
 import com.enesakdn.n11finaluserService.dto.UserDTO;
 import com.enesakdn.n11finaluserService.general.RestResponse;
 import com.enesakdn.n11finaluserService.request.UserSaveRequest;

@@ -1,6 +1,6 @@
-package com.enesakdn.n11finaluserService.controller.contrat.impl;
+package com.enesakdn.n11finaluserService.controller.contract.impl;
 
-import com.enesakdn.n11finaluserService.controller.contrat.CommentControllerContract;
+import com.enesakdn.n11finaluserService.controller.contract.CommentControllerContract;
 import com.enesakdn.n11finaluserService.dto.CommentDTO;
 import com.enesakdn.n11finaluserService.entity.Comment;
 import com.enesakdn.n11finaluserService.mapper.CommentMapper;
@@ -48,6 +48,12 @@ public class CommentControllerContractImpl implements CommentControllerContract 
     @Override
     public void deleteComment(Long id) {
         commentEntityService.delete(id);
+    }
+
+    @Override
+    public List<CommentDTO> getCommentByUserId(long userId) {
+        List<Comment> comments = commentEntityService.findCommentByUserId(userId);
+        return CommentMapper.INSTANCE.convertToCommentDTOs(comments);
     }
 }
 

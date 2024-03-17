@@ -1,6 +1,6 @@
-package com.enesakdn.n11finaluserService.controller.contrat.impl;
+package com.enesakdn.n11finaluserService.controller.contract.impl;
 
-import com.enesakdn.n11finaluserService.controller.contrat.UserControllerContract;
+import com.enesakdn.n11finaluserService.controller.contract.UserControllerContract;
 import com.enesakdn.n11finaluserService.dto.UserDTO;
 import com.enesakdn.n11finaluserService.entity.User;
 import com.enesakdn.n11finaluserService.mapper.UserMapper;

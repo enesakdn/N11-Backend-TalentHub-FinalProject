@@ -19,8 +19,8 @@ import com.enesakdn.n11finaluserService.enums.EnumScore;
     @Column(name = "SCORE")
     private EnumScore score;
 * */
-public record CommentSaveRequest( long CustomerId,
-                                  long RestaurantId,
+public record CommentSaveRequest( long userId,
+                                  long restaurantId,
                                   String topic,
                                   String text,
                                   EnumScore score) {

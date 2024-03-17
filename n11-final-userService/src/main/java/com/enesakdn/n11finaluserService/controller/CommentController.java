@@ -1,6 +1,6 @@
 package com.enesakdn.n11finaluserService.controller;
 
-import com.enesakdn.n11finaluserService.controller.contrat.CommentControllerContract;
+import com.enesakdn.n11finaluserService.controller.contract.CommentControllerContract;
 import com.enesakdn.n11finaluserService.dto.CommentDTO;
 import com.enesakdn.n11finaluserService.general.RestResponse;
 import com.enesakdn.n11finaluserService.request.CommentSaveRequest;
@@ -46,5 +46,10 @@ public class CommentController {
     public ResponseEntity<RestResponse<CommentDTO>> updateComment(@PathVariable Long id, @RequestBody CommentUpdateRequest request) {
         CommentDTO commentDTO = commentControllerContract.updateComment(request);
         return ResponseEntity.ok(RestResponse.of(commentDTO));
+    }
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<RestResponse<List<CommentDTO>>> getCommentByUserId(@PathVariable Long userId) {
+        List<CommentDTO> commentDTOS = commentControllerContract.getCommentByUserId(userId);
+        return ResponseEntity.ok(RestResponse.of(commentDTOS));
     }
 }

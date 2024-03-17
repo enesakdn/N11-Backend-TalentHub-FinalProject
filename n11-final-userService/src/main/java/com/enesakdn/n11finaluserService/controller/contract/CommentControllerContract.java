@@ -1,4 +1,4 @@
-package com.enesakdn.n11finaluserService.controller.contrat;
+package com.enesakdn.n11finaluserService.controller.contract;
 
 import com.enesakdn.n11finaluserService.dto.CommentDTO;
 import com.enesakdn.n11finaluserService.request.CommentSaveRequest;
@@ -16,4 +16,6 @@ public interface CommentControllerContract {
     CommentDTO getCommentById(Long id);
 
     void deleteComment(Long id);
+
+    List<CommentDTO> getCommentByUserId(long userId);
 }
